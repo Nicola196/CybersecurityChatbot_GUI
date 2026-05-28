@@ -105,7 +105,7 @@ namespace CybersecurityChatbot_GUI
             BtnTip.IsEnabled = true;
 
             // Welcome messages (animated)
-            AppendBotMessage($"Welcome, {_user.Name}! How can I assist you today? 🛡", "#00FF88");
+            AppendBotMessage($"Welcome, {_user.Name}! How can I assist you today? ", "#00FF88");
             AppendBotMessage(
                 "Ask me about: CYBERSECURITY | PHISHING | PASSWORD | SCAM | PRIVACY | BROWSING | SUSPICIOUS LINKS | REPORT\n" +
                 "You can also request a 'phishing tip', 'password tip', or 'safety tip'.\n" +
