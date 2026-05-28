@@ -680,16 +680,16 @@ namespace CybersecurityChatbot
             if (lower == "help" || lower.Contains("what can you do") || lower.Contains("topics") || lower.Contains("menu"))
             {
                 return "Here is everything I can help you with, " + user.Name + ":\n\n" +
-                       "🔐 CYBERSECURITY  — What it is and how to protect yourself\n" +
-                       "🎣 PHISHING       — Spot, handle, and report fake emails\n" +
-                       "🔑 PASSWORD       — Strong passwords and safe habits\n" +
-                       "💀 SCAM           — Common scams and how to avoid them\n" +
-                       "🕵 PRIVACY        — Protect your personal data online\n" +
-                       "🌐 BROWSING       — Safe browsing and HTTPS explained\n" +
-                       "🔗 SUSPICIOUS     — Identify and check dangerous links\n" +
-                       "📋 REPORT         — How and where to report cybercrime in SA\n\n" +
-                       "💡 TIPS: 'phishing tip' | 'password tip' | 'scam tip' | 'safety tip'\n" +
-                       "🔄 FOLLOW-UP: 'tell me more' | 'another tip' | 'explain more'\n" +
+                       " CYBERSECURITY  — What it is and how to protect yourself\n" +
+                       " PHISHING       — Spot, handle, and report fake emails\n" +
+                       " PASSWORD       — Strong passwords and safe habits\n" +
+                       " SCAM           — Common scams and how to avoid them\n" +
+                       " PRIVACY        — Protect your personal data online\n" +
+                       " BROWSING       — Safe browsing and HTTPS explained\n" +
+                       " SUSPICIOUS     — Identify and check dangerous links\n" +
+                       " REPORT         — How and where to report cybercrime in SA\n\n" +
+                       " TIPS: 'phishing tip' | 'password tip' | 'scam tip' | 'safety tip'\n" +
+                       " FOLLOW-UP: 'tell me more' | 'another tip' | 'explain more'\n" +
                        "Type 'exit' to quit.";
             }
 
