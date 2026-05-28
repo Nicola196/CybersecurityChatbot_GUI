@@ -552,25 +552,25 @@ namespace CybersecurityChatbot
                 "general safety tip",
                 new[]
                 {
-                    "🛡 SAFETY TIP: Keep ALL your software updated — operating system, browser, apps, and antivirus. The majority of successful cyberattacks exploit known vulnerabilities that updates already fix. Enable automatic updates.",
-                    "🛡 SAFETY TIP: Never use public Wi-Fi for banking, shopping, or anything sensitive without a VPN. On open networks, everything you send is visible to anyone with basic tools. A VPN encrypts your traffic completely.",
-                    "🛡 SAFETY TIP: Back up your important files using the 3-2-1 rule: 3 copies of your data, on 2 different types of storage, with 1 copy stored offsite or in the cloud. Ransomware is powerless against a clean, recent backup.",
-                    "🛡 SAFETY TIP: Lock your screen every time you leave your device — even for a minute. Use Windows Key + L (Windows) or Control + Command + Q (Mac). It takes one second and prevents physical access attacks.",
-                    "🛡 SAFETY TIP: Review your app permissions monthly. Go to your phone's Settings → Apps → Permissions and revoke camera, microphone, location, and contact access from any app that doesn't genuinely need it.",
-                    "🛡 SAFETY TIP: Be careful what you plug into your computer. USB drives found in parking lots or given as freebies at events are a known attack method. Malware can install automatically when you plug them in.",
-                    "🛡 SAFETY TIP: Enable 'Find My Device' on your phone and laptop. If your device is lost or stolen, you can remotely locate, lock, or wipe it to prevent your data from falling into the wrong hands.",
-                    "🛡 SAFETY TIP: Use a credit card (not debit) for online shopping where possible. Credit cards offer far better fraud protection and dispute resolution. You're spending the bank's money, not yours, while a dispute is resolved."
+                    " SAFETY TIP: Keep ALL your software updated — operating system, browser, apps, and antivirus. The majority of successful cyberattacks exploit known vulnerabilities that updates already fix. Enable automatic updates.",
+                    " SAFETY TIP: Never use public Wi-Fi for banking, shopping, or anything sensitive without a VPN. On open networks, everything you send is visible to anyone with basic tools. A VPN encrypts your traffic completely.",
+                    " SAFETY TIP: Back up your important files using the 3-2-1 rule: 3 copies of your data, on 2 different types of storage, with 1 copy stored offsite or in the cloud. Ransomware is powerless against a clean, recent backup.",
+                    " SAFETY TIP: Lock your screen every time you leave your device — even for a minute. Use Windows Key + L (Windows) or Control + Command + Q (Mac). It takes one second and prevents physical access attacks.",
+                    " SAFETY TIP: Review your app permissions monthly. Go to your phone's Settings → Apps → Permissions and revoke camera, microphone, location, and contact access from any app that doesn't genuinely need it.",
+                    " SAFETY TIP: Be careful what you plug into your computer. USB drives found in parking lots or given as freebies at events are a known attack method. Malware can install automatically when you plug them in.",
+                    " SAFETY TIP: Enable 'Find My Device' on your phone and laptop. If your device is lost or stolen, you can remotely locate, lock, or wipe it to prevent your data from falling into the wrong hands.",
+                    " SAFETY TIP: Use a credit card (not debit) for online shopping where possible. Credit cards offer far better fraud protection and dispute resolution. You're spending the bank's money, not yours, while a dispute is resolved."
                 }
             },
             {
                 "scam tip",
                 new[]
                 {
-                    "💀 SCAM TIP: Never share your OTP (one-time password) with anyone — not even someone claiming to be from your bank. Your bank will NEVER ask for it. If someone calls asking for your OTP, hang up immediately.",
-                    "💀 SCAM TIP: Before buying from an unfamiliar online shop, search the business name plus 'scam' or 'review' and check the CIPC register at cipc.co.za to verify they are a legitimate registered company.",
-                    "💀 SCAM TIP: Pig butchering scams are growing in South Africa — scammers build a fake romantic or friendly relationship over weeks before convincing you to invest in a fraudulent crypto platform. Never invest based on someone you met online.",
-                    "💀 SCAM TIP: If someone contacts you claiming you've won a prize, inherited money, or been randomly selected for an opportunity — and asks you to pay any fee to claim it — it is always a scam.",
-                    "💀 SCAM TIP: Job scams are common. Legitimate employers never ask you to pay for training materials, background checks, or equipment upfront. They also never ask for your banking details before you've signed a contract."
+                    " SCAM TIP: Never share your OTP (one-time password) with anyone — not even someone claiming to be from your bank. Your bank will NEVER ask for it. If someone calls asking for your OTP, hang up immediately.",
+                    " SCAM TIP: Before buying from an unfamiliar online shop, search the business name plus 'scam' or 'review' and check the CIPC register at cipc.co.za to verify they are a legitimate registered company.",
+                    " SCAM TIP: Pig butchering scams are growing in South Africa — scammers build a fake romantic or friendly relationship over weeks before convincing you to invest in a fraudulent crypto platform. Never invest based on someone you met online.",
+                    " SCAM TIP: If someone contacts you claiming you've won a prize, inherited money, or been randomly selected for an opportunity — and asks you to pay any fee to claim it — it is always a scam.",
+                    " SCAM TIP: Job scams are common. Legitimate employers never ask you to pay for training materials, background checks, or equipment upfront. They also never ask for your banking details before you've signed a contract."
                 }
             }
         };
@@ -694,13 +694,13 @@ namespace CybersecurityChatbot
             }
 
             if (lower.Contains("hello") || lower.Contains("hi") || lower.Contains("hey") || lower == "sup")
-                return $"Hello again, {user.Name}! 👋 How can I help you stay safe online today? Type 'help' to see all topics.";
+                return $"Hello again, {user.Name}!  How can I help you stay safe online today? Type 'help' to see all topics.";
 
             if (lower.Contains("how are you"))
                 return $"I'm running at full security capacity, {user.Name}! Always alert, always protecting. How can I help you?";
 
             if (lower.Contains("thank"))
-                return $"You're very welcome, {user.Name}! Stay vigilant and stay safe out there. 🛡 Knowledge is your best defence.";
+                return $"You're very welcome, {user.Name}! Stay vigilant and stay safe out there.  Knowledge is your best defence.";
 
             if (lower.Contains("who are you") || lower.Contains("what are you"))
                 return $"I'm your Cybersecurity Awareness Chatbot, {user.Name}! I'm here to help you understand online threats and teach you how to protect yourself. Type 'help' to see what I can do.";
@@ -710,7 +710,7 @@ namespace CybersecurityChatbot
             // ----------------------------------------------------------
             string memoryPrompt = string.Empty;
             if (!string.IsNullOrEmpty(user.FavouriteTopic))
-                memoryPrompt = $"\n\n💭 As someone interested in {user.FavouriteTopic}, you might want to explore how this topic connects to that as well.";
+                memoryPrompt = $"\n\n As someone interested in {user.FavouriteTopic}, you might want to explore how this topic connects to that as well.";
 
             // ----------------------------------------------------------
             // STEP 7: Keyword topic matching  (Question 2)
