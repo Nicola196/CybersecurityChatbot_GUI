@@ -83,7 +83,7 @@ namespace CybersecurityChatbot_GUI
             {
                 // Highlight the input box to signal a problem  (Question 7 — validation)
                 NameInput.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 80, 80));
-                AppendBotMessage("⚠ Please enter your name so I can personalise our chat.", "#FF5050");
+                AppendBotMessage(" Please enter your name so I can personalise our chat.", "#FF5050");
                 return;
             }
 
@@ -137,7 +137,7 @@ namespace CybersecurityChatbot_GUI
             if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
             {
                 AppendUserMessage(input);
-                AppendBotMessage($"Goodbye, {_user.Name}! Stay safe online! 🛡", "#00FF88");
+                AppendBotMessage($"Goodbye, {_user.Name}! Stay safe online! ", "#00FF88");
                 SendButton.IsEnabled = false;
                 MessageInput.IsEnabled = false;
                 return;
@@ -220,7 +220,7 @@ namespace CybersecurityChatbot_GUI
 
             TextBlock tb = new TextBlock
             {
-                Text = "🤖 Bot: ",
+                Text = " Bot: ",
                 Foreground = new SolidColorBrush(col),
                 FontFamily = new FontFamily("Courier New"),
                 FontSize = 13,
