@@ -135,14 +135,14 @@ namespace CybersecurityChatbot
                         new[]
                         {
                             "Here is a practical protection checklist:\n" +
-                            "✔ Use strong, unique passwords for every account (use a password manager).\n" +
-                            "✔ Enable two-factor authentication (2FA) on all important accounts.\n" +
-                            "✔ Keep your operating system, browser, and all apps updated.\n" +
-                            "✔ Install reputable antivirus software (e.g. Malwarebytes, Windows Defender).\n" +
-                            "✔ Use a firewall — Windows has one built in; make sure it's enabled.\n" +
-                            "✔ Back up important files regularly to an external drive or cloud service.\n" +
-                            "✔ Be sceptical — if something feels wrong, trust your instincts and verify before clicking.\n" +
-                            "✔ Use a VPN on public Wi-Fi to encrypt your internet traffic."
+                            " Use strong, unique passwords for every account (use a password manager).\n" +
+                            " Enable two-factor authentication (2FA) on all important accounts.\n" +
+                            " Keep your operating system, browser, and all apps updated.\n" +
+                            " Install reputable antivirus software (e.g. Malwarebytes, Windows Defender).\n" +
+                            " Use a firewall — Windows has one built in; make sure it's enabled.\n" +
+                            " Back up important files regularly to an external drive or cloud service.\n" +
+                            " Be sceptical — if something feels wrong, trust your instincts and verify before clicking.\n" +
+                            " Use a VPN on public Wi-Fi to encrypt your internet traffic."
                         }
                     }
                 )
@@ -524,28 +524,28 @@ namespace CybersecurityChatbot
                 "phishing tip",
                 new[]
                 {
-                    "🎣 PHISHING TIP: Be extremely cautious of emails creating urgency — 'Your account will be suspended in 24 hours!' Scammers use panic to bypass your critical thinking. Take a breath, close the email, and go directly to the official website.",
-                    "🎣 PHISHING TIP: Always verify the sender's email address character by character. Fraudsters register domains like 'support@paypa1.com' (number 1 instead of L) or 'fnb-secure@mail-fnb.co' — convincing at a glance but fake.",
-                    "🎣 PHISHING TIP: Legitimate organisations will NEVER ask for your password, OTP, PIN, or full credit card number via email or SMS. If any message asks for these, it is a scam — no exceptions.",
-                    "🎣 PHISHING TIP: When in doubt about a link, open a new browser tab and type the official website address yourself. Never follow a link in an unexpected email, even if it looks perfect.",
-                    "🎣 PHISHING TIP: Hover over any link in an email (on desktop) before clicking. The real destination URL appears in the bottom status bar. If it doesn't match the expected site, don't click.",
-                    "🎣 PHISHING TIP: Watch for generic greetings like 'Dear Customer' or 'Dear User' in emails claiming to be from your bank. Your real bank knows your name and uses it.",
-                    "🎣 PHISHING TIP: Spear phishing uses your real name, employer, and recent activity (gathered from social media) to create highly personalised fake emails. Limit what you share publicly online.",
-                    "🎣 PHISHING TIP: Vishing (voice phishing) is surging in South Africa. Scammers call claiming to be from your bank or SARS. Hang up and call back on the official number from the organisation's website — never the number they give you."
+                    " PHISHING TIP: Be extremely cautious of emails creating urgency — 'Your account will be suspended in 24 hours!' Scammers use panic to bypass your critical thinking. Take a breath, close the email, and go directly to the official website.",
+                    " PHISHING TIP: Always verify the sender's email address character by character. Fraudsters register domains like 'support@paypa1.com' (number 1 instead of L) or 'fnb-secure@mail-fnb.co' — convincing at a glance but fake.",
+                    " PHISHING TIP: Legitimate organisations will NEVER ask for your password, OTP, PIN, or full credit card number via email or SMS. If any message asks for these, it is a scam — no exceptions.",
+                    " PHISHING TIP: When in doubt about a link, open a new browser tab and type the official website address yourself. Never follow a link in an unexpected email, even if it looks perfect.",
+                    " PHISHING TIP: Hover over any link in an email (on desktop) before clicking. The real destination URL appears in the bottom status bar. If it doesn't match the expected site, don't click.",
+                    " PHISHING TIP: Watch for generic greetings like 'Dear Customer' or 'Dear User' in emails claiming to be from your bank. Your real bank knows your name and uses it.",
+                    " PHISHING TIP: Spear phishing uses your real name, employer, and recent activity (gathered from social media) to create highly personalised fake emails. Limit what you share publicly online.",
+                    " PHISHING TIP: Vishing (voice phishing) is surging in South Africa. Scammers call claiming to be from your bank or SARS. Hang up and call back on the official number from the organisation's website — never the number they give you."
                 }
             },
             {
                 "password tip",
                 new[]
                 {
-                    "🔑 PASSWORD TIP: Use Bitwarden — it's completely free, open-source, and generates complex unique passwords for every site. You only remember one strong master password. It's the single most impactful security upgrade most people can make.",
-                    "🔑 PASSWORD TIP: Enable two-factor authentication (2FA) on every account that offers it — especially email, banking, and social media. Even if your password is stolen, attackers cannot log in without your phone.",
-                    "🔑 PASSWORD TIP: Build passphrases, not passwords. 'Coffee!Rain42Desk' is far stronger than 'P@ssw0rd123' and much easier to remember. Use four random words with numbers and symbols between them.",
-                    "🔑 PASSWORD TIP: Check if your accounts have been compromised — visit HaveIBeenPwned.com and enter your email address. If your email appears in a breach, change that password everywhere you used it immediately.",
-                    "🔑 PASSWORD TIP: Never store passwords in a plain text file, sticky note, or your browser's basic save function. Use a dedicated encrypted password manager with a strong master password and 2FA on the manager itself.",
-                    "🔑 PASSWORD TIP: Your email password is your most critical password — it's the master key to every account. If attackers control your email, they can reset every other account. Make it long, unique, and protect it with 2FA.",
-                    "🔑 PASSWORD TIP: Change passwords immediately if you hear a service you use has been breached — even if you haven't been notified yet. Don't wait for the company to contact you.",
-                    "🔑 PASSWORD TIP: Use a hardware security key (like a YubiKey) as your second factor for highest-security accounts. Unlike SMS codes, hardware keys cannot be stolen remotely or intercepted."
+                    " PASSWORD TIP: Use Bitwarden — it's completely free, open-source, and generates complex unique passwords for every site. You only remember one strong master password. It's the single most impactful security upgrade most people can make.",
+                    " PASSWORD TIP: Enable two-factor authentication (2FA) on every account that offers it — especially email, banking, and social media. Even if your password is stolen, attackers cannot log in without your phone.",
+                    " PASSWORD TIP: Build passphrases, not passwords. 'Coffee!Rain42Desk' is far stronger than 'P@ssw0rd123' and much easier to remember. Use four random words with numbers and symbols between them.",
+                    " PASSWORD TIP: Check if your accounts have been compromised — visit HaveIBeenPwned.com and enter your email address. If your email appears in a breach, change that password everywhere you used it immediately.",
+                    " PASSWORD TIP: Never store passwords in a plain text file, sticky note, or your browser's basic save function. Use a dedicated encrypted password manager with a strong master password and 2FA on the manager itself.",
+                    " PASSWORD TIP: Your email password is your most critical password — it's the master key to every account. If attackers control your email, they can reset every other account. Make it long, unique, and protect it with 2FA.",
+                    " PASSWORD TIP: Change passwords immediately if you hear a service you use has been breached — even if you haven't been notified yet. Don't wait for the company to contact you.",
+                    " PASSWORD TIP: Use a hardware security key (like a YubiKey) as your second factor for highest-security accounts. Unlike SMS codes, hardware keys cannot be stolen remotely or intercepted."
                 }
             },
             {
