@@ -582,7 +582,7 @@ namespace CybersecurityChatbot
         {
             "interested in", "i like", "i love", "i care about",
             "concerned about", "want to learn about", "want to know about",
-            "fascinated by", "worried about", "focused on"
+            "fascinated by", "worried about", "focused "
         };
 
         // ============================================================
@@ -700,7 +700,7 @@ namespace CybersecurityChatbot
                 return $"I'm running at full security capacity, {user.Name}! Always alert, always protecting. How can I help you?";
 
             if (lower.Contains("thank"))
-                return $"You're very welcome, {user.Name}! Stay vigilant and stay safe out there.  Knowledge is your best defence.";
+                return $"You are very welcome, {user.Name}! Stay vigilant and stay safe out there.  Knowledge is your best defence.";
 
             if (lower.Contains("who are you") || lower.Contains("what are you"))
                 return $"I'm your Cybersecurity Awareness Chatbot, {user.Name}! I'm here to help you understand online threats and teach you how to protect yourself. Type 'help' to see what I can do.";
