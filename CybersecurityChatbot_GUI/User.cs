@@ -1,10 +1,17 @@
-﻿using System.Collections.Generic;
+﻿// ============================================================
+// FILE: User.cs
+// PURPOSE: Holds all information about the person chatting with
+//          the bot — identity, memory/recall, and conversation
+//          history. Used throughout Chatbot.cs to personalise
+//          every response.
+// ============================================================
 
-namespace CybersecurityChatbot
+using System.Collections.Generic;
+
+namespace CybersecurityChatbot_GUI
 {
     /// <summary>
-    /// Holds all information about the person chatting with the bot.
-    /// Extended for Part 2 with memory/recall properties.
+    /// Represents the current user of the chatbot session.
     /// </summary>
     public class User
     {
@@ -21,16 +28,16 @@ namespace CybersecurityChatbot
         public bool IsExiting { get; set; }
 
         // -------------------------------------------------------
-        // PROPERTY: FavouriteTopic  (NEW - Memory & Recall)
+        // PROPERTY: FavouriteTopic  (Memory & Recall — Part 2)
         // Stores a cybersecurity topic the user expressed interest in.
         // e.g. "I'm interested in privacy" → FavouriteTopic = "privacy"
         // -------------------------------------------------------
         public string FavouriteTopic { get; set; }
 
         // -------------------------------------------------------
-        // PROPERTY: ConversationHistory  (NEW - Memory & Recall)
-        // Keeps a log of what the user has mentioned so the bot
-        // can reference earlier parts of the conversation.
+        // PROPERTY: ConversationHistory  (Memory & Recall — Part 2)
+        // Keeps a log of what the user has typed so the bot can
+        // reference earlier parts of the conversation.
         // -------------------------------------------------------
         public List<string> ConversationHistory { get; set; }
 

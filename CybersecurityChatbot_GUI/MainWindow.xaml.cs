@@ -3,20 +3,20 @@
 // PURPOSE: WPF code-behind — handles all UI interactions,
 //          animated typing, progress bar, voice greeting,
 //          and delegates processing to Chatbot.cs.
+//          Part 3 features (tasks, quiz, NLP, activity log) all
+//          flow through the existing _chatbot.ProcessInput(clean, _user)
+//          call below — no new GUI elements were required.
 // ============================================================
 
-using CybersecurityChatbot;
 using System;
 using System.Media;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace CybersecurityChatbot_GUI
-
 {
     public partial class MainWindow : Window
     {
@@ -83,7 +83,7 @@ namespace CybersecurityChatbot_GUI
             {
                 // Highlight the input box to signal a problem  (Question 7 — validation)
                 NameInput.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 80, 80));
-                AppendBotMessage(" Please enter your name so I can personalise our chat.", "#FF5050");
+                AppendBotMessage("⚠ Please enter your name so I can personalise our chat.", "#FF5050");
                 return;
             }
 
@@ -105,11 +105,11 @@ namespace CybersecurityChatbot_GUI
             BtnTip.IsEnabled = true;
 
             // Welcome messages (animated)
-            AppendBotMessage($"Welcome, {_user.Name}! How can I assist you today? ", "#00FF88");
+            AppendBotMessage($"Welcome, {_user.Name}! How can I assist you today? 🛡", "#00FF88");
             AppendBotMessage(
                 "Ask me about: CYBERSECURITY | PHISHING | PASSWORD | SCAM | PRIVACY | BROWSING | SUSPICIOUS LINKS | REPORT\n" +
-                "You can also request a 'phishing tip', 'password tip', or 'safety tip'.\n" +
-                "Type 'help' to see all topics. Type 'exit' to quit.",
+                "You can also manage TASKS, play the QUIZ, or view your ACTIVITY LOG.\n" +
+                "Type 'help' to see everything I can do. Type 'exit' to quit.",
                 "#58A6FF");
 
             MessageInput.Focus();
@@ -137,7 +137,7 @@ namespace CybersecurityChatbot_GUI
             if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
             {
                 AppendUserMessage(input);
-                AppendBotMessage($"Goodbye, {_user.Name}! Stay safe online! ", "#00FF88");
+                AppendBotMessage($"Goodbye, {_user.Name}! Stay safe online! 🛡", "#00FF88");
                 SendButton.IsEnabled = false;
                 MessageInput.IsEnabled = false;
                 return;
@@ -149,8 +149,12 @@ namespace CybersecurityChatbot_GUI
             // Use Dispatcher to avoid blocking the UI thread
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                // Strip punctuation so "phishing!" still matches "phishing"
-                string clean = System.Text.RegularExpressions.Regex.Replace(input, @"[^\w\s]", "").Trim();
+                // NOTE: Only trailing "!" or "?" are stripped here.
+                // Part 3's task titles and reminders rely on phrases
+                // like "Add task -" and "remind me in 3 days", so we
+                // must NOT strip dashes, colons, or numbers the way
+                // Part 2's blanket punctuation stripper did.
+                string clean = System.Text.RegularExpressions.Regex.Replace(input, @"[!?]+$", "").Trim();
                 string response = _chatbot.ProcessInput(clean, _user);
                 AppendBotMessage(response, "#00FF88");
             }), DispatcherPriority.Background);
@@ -220,7 +224,7 @@ namespace CybersecurityChatbot_GUI
 
             TextBlock tb = new TextBlock
             {
-                Text = " Bot: ",
+                Text = "🤖 Bot: ",
                 Foreground = new SolidColorBrush(col),
                 FontFamily = new FontFamily("Courier New"),
                 FontSize = 13,

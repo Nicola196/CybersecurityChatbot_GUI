@@ -7,84 +7,84 @@
         WindowStartupLocation="CenterScreen"
         Background="#0D1117">
 
-        <Window.Resources>
-            <!-- Reusable button style -->
-            <Style x:Key="CyberButton" TargetType="Button">
-                <Setter Property="Background"        Value="#161B22"/>
-                <Setter Property="Foreground"        Value="#00FF88"/>
-                <Setter Property="BorderBrush"       Value="#00FF88"/>
-                <Setter Property="BorderThickness"   Value="1"/>
-                <Setter Property="FontFamily"        Value="Courier New"/>
-                <Setter Property="FontSize"          Value="13"/>
-                <Setter Property="Padding"           Value="14,8"/>
-                <Setter Property="Cursor"            Value="Hand"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
+    <Window.Resources>
+        <!-- Reusable button style -->
+        <Style x:Key="CyberButton" TargetType="Button">
+            <Setter Property="Background"        Value="#161B22"/>
+            <Setter Property="Foreground"        Value="#00FF88"/>
+            <Setter Property="BorderBrush"       Value="#00FF88"/>
+            <Setter Property="BorderThickness"   Value="1"/>
+            <Setter Property="FontFamily"        Value="Courier New"/>
+            <Setter Property="FontSize"          Value="13"/>
+            <Setter Property="Padding"           Value="14,8"/>
+            <Setter Property="Cursor"            Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="4">
-                                <ContentPresenter HorizontalAlignment="Center"
+                            <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center"
                                               Margin="{TemplateBinding Padding}"/>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#00FF88"/>
-                                    <Setter Property="Foreground" Value="#0D1117"/>
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter Property="Opacity" Value="0.4"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00FF88"/>
+                                <Setter Property="Foreground" Value="#0D1117"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-            <!-- Input TextBox style -->
-            <Style x:Key="InputBox" TargetType="TextBox">
-                <Setter Property="Background"       Value="#161B22"/>
-                <Setter Property="Foreground"       Value="#E6EDF3"/>
-                <Setter Property="CaretBrush"       Value="#00FF88"/>
-                <Setter Property="BorderBrush"      Value="#30363D"/>
-                <Setter Property="BorderThickness"  Value="1"/>
-                <Setter Property="FontFamily"       Value="Courier New"/>
-                <Setter Property="FontSize"         Value="14"/>
-                <Setter Property="Padding"          Value="10,8"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Style.Triggers>
-                    <Trigger Property="IsFocused" Value="True">
-                        <Setter Property="BorderBrush" Value="#00FF88"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Window.Resources>
+        <!-- Input TextBox style -->
+        <Style x:Key="InputBox" TargetType="TextBox">
+            <Setter Property="Background"       Value="#161B22"/>
+            <Setter Property="Foreground"       Value="#E6EDF3"/>
+            <Setter Property="CaretBrush"       Value="#00FF88"/>
+            <Setter Property="BorderBrush"      Value="#30363D"/>
+            <Setter Property="BorderThickness"  Value="1"/>
+            <Setter Property="FontFamily"       Value="Courier New"/>
+            <Setter Property="FontSize"         Value="14"/>
+            <Setter Property="Padding"          Value="10,8"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="BorderBrush" Value="#00FF88"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <!-- ASCII Banner -->
-                <RowDefinition Height="Auto"/>
-                <!-- Name panel (shown at startup, hidden after) -->
-                <RowDefinition Height="Auto"/>
-                <!-- Chat scroll area -->
-                <RowDefinition Height="*"/>
-                <!-- Progress bar -->
-                <RowDefinition Height="Auto"/>
-                <!-- Input row -->
-                <RowDefinition Height="Auto"/>
-                <!-- Quick-action buttons -->
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- ASCII Banner -->
+            <RowDefinition Height="Auto"/>
+            <!-- Name panel (shown at startup, hidden after) -->
+            <RowDefinition Height="Auto"/>
+            <!-- Chat scroll area -->
+            <RowDefinition Height="*"/>
+            <!-- Progress bar -->
+            <RowDefinition Height="Auto"/>
+            <!-- Input row -->
+            <RowDefinition Height="Auto"/>
+            <!-- Quick-action buttons -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-            <!-- ================================================== -->
-            <!-- ROW 0: ASCII ART BANNER  (Question 1 — ASCII art)  -->
-            <!-- ================================================== -->
-            <Border Grid.Row="0" Background="#0D1117" Padding="16,12">
-                <StackPanel>
-                    <!-- ASCII art in monospace font -->
-                    <TextBlock FontFamily="Courier New"
+        <!-- ================================================== -->
+        <!-- ROW 0: ASCII ART BANNER  (Question 1 — ASCII art)  -->
+        <!-- ================================================== -->
+        <Border Grid.Row="0" Background="#0D1117" Padding="16,12">
+            <StackPanel>
+                <!-- ASCII art in monospace font -->
+                <TextBlock FontFamily="Courier New"
                            FontSize="11"
                            Foreground="#00FF88"
                            xml:space="preserve"
@@ -94,74 +94,74 @@
   \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ |
    \ V  V /  __/ | (_| (_) | | | | | |  __/_|
     \_/\_/ \___|_|\___\___/|_| |_| |_|\___(_)
-                    </TextBlock>
-                    <TextBlock Text="★  Cybersecurity Awareness Chatbot  ★"
+                </TextBlock>
+                <TextBlock Text="★  Cybersecurity Awareness Chatbot  ★"
                            FontFamily="Courier New"
                            FontSize="14"
                            Foreground="#58A6FF"
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            Margin="0,4,0,0"/>
-                    <!-- Decorative separator -->
-                    <TextBlock Text="════════════════════════════════════════════════════"
+                <!-- Decorative separator -->
+                <TextBlock Text="════════════════════════════════════════════════════"
                            FontFamily="Courier New"
                            FontSize="11"
                            Foreground="#21262D"
                            HorizontalAlignment="Center"
                            Margin="0,6,0,0"/>
-                </StackPanel>
-            </Border>
+            </StackPanel>
+        </Border>
 
-            <!-- ================================================== -->
-            <!-- ROW 1: NAME ENTRY PANEL (shown on first launch)     -->
-            <!-- ================================================== -->
-            <Border Grid.Row="1" x:Name="NamePanel"
+        <!-- ================================================== -->
+        <!-- ROW 1: NAME ENTRY PANEL (shown on first launch)     -->
+        <!-- ================================================== -->
+        <Border Grid.Row="1" x:Name="NamePanel"
                 Background="#161B22"
                 BorderBrush="#00FF88" BorderThickness="0,0,0,1"
                 Padding="16,12" Visibility="Visible">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                        <TextBlock Text="🤖  Bot: Hello! Before we begin, what is your name?"
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <TextBlock Text="🤖  Bot: Hello! Before we begin, what is your name?"
                                Foreground="#00FF88"
                                FontFamily="Courier New"
                                FontSize="13"/>
-                    </StackPanel>
-                    <TextBox Grid.Column="1"
+                </StackPanel>
+                <TextBox Grid.Column="1"
                          x:Name="NameInput"
                          Style="{StaticResource InputBox}"
                          Width="200"
                          Margin="12,0"
                          VerticalAlignment="Center"
                          KeyDown="NameInput_KeyDown"/>
-                    <Button Grid.Column="2"
+                <Button Grid.Column="2"
                         Content="START CHAT"
                         Style="{StaticResource CyberButton}"
                         Click="StartChat_Click"
                         VerticalAlignment="Center"/>
-                </Grid>
-            </Border>
+            </Grid>
+        </Border>
 
-            <!-- ================================================== -->
-            <!-- ROW 2: CHAT DISPLAY AREA                            -->
-            <!-- ================================================== -->
-            <ScrollViewer Grid.Row="2"
+        <!-- ================================================== -->
+        <!-- ROW 2: CHAT DISPLAY AREA                            -->
+        <!-- ================================================== -->
+        <ScrollViewer Grid.Row="2"
                       x:Name="ChatScroller"
                       VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Disabled"
                       Background="#0D1117"
                       Padding="16,8">
-                <StackPanel x:Name="ChatPanel" Margin="0,4"/>
-            </ScrollViewer>
+            <StackPanel x:Name="ChatPanel" Margin="0,4"/>
+        </ScrollViewer>
 
-            <!-- ================================================== -->
-            <!-- ROW 3: PROGRESS BAR  (Question 1 — progress bar)   -->
-            <!-- ================================================== -->
-            <ProgressBar Grid.Row="3"
+        <!-- ================================================== -->
+        <!-- ROW 3: PROGRESS BAR  (Question 1 — progress bar)   -->
+        <!-- ================================================== -->
+        <ProgressBar Grid.Row="3"
                      x:Name="ProcessingBar"
                      Height="3"
                      Background="#161B22"
@@ -171,22 +171,22 @@
                      Maximum="100"
                      Visibility="Collapsed"/>
 
-            <!-- ================================================== -->
-            <!-- ROW 4: USER INPUT ROW                               -->
-            <!-- ================================================== -->
-            <Border Grid.Row="4"
+        <!-- ================================================== -->
+        <!-- ROW 4: USER INPUT ROW                               -->
+        <!-- ================================================== -->
+        <Border Grid.Row="4"
                 Background="#161B22"
                 BorderBrush="#21262D" BorderThickness="0,1,0,0"
                 Padding="12,10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-                    <!-- User label — shows name once set -->
-                    <TextBlock x:Name="UserLabel"
+                <!-- User label — shows name once set -->
+                <TextBlock x:Name="UserLabel"
                            Grid.Column="0"
                            Text="You: "
                            Foreground="#58A6FF"
@@ -196,14 +196,14 @@
                            VerticalAlignment="Center"
                            Margin="0,0,8,0"/>
 
-                    <TextBox Grid.Column="1"
+                <TextBox Grid.Column="1"
                          x:Name="MessageInput"
                          Style="{StaticResource InputBox}"
                          IsEnabled="False"
                          KeyDown="MessageInput_KeyDown"
                          VerticalAlignment="Center"/>
 
-                    <Button Grid.Column="2"
+                <Button Grid.Column="2"
                         Content="SEND  ▶"
                         Style="{StaticResource CyberButton}"
                         IsEnabled="False"
@@ -211,30 +211,30 @@
                         Click="Send_Click"
                         Margin="10,0,0,0"
                         VerticalAlignment="Center"/>
-                </Grid>
-            </Border>
+            </Grid>
+        </Border>
 
-            <!-- ================================================== -->
-            <!-- ROW 5: QUICK-ACTION BUTTONS                         -->
-            <!-- ================================================== -->
-            <Border Grid.Row="5"
+        <!-- ================================================== -->
+        <!-- ROW 5: QUICK-ACTION BUTTONS                         -->
+        <!-- ================================================== -->
+        <Border Grid.Row="5"
                 Background="#0D1117"
                 BorderBrush="#21262D" BorderThickness="0,1,0,0"
                 Padding="12,8">
-                <WrapPanel HorizontalAlignment="Center">
-                    <Button Content="🔐 Cybersecurity" Style="{StaticResource CyberButton}" Margin="4"
+            <WrapPanel HorizontalAlignment="Center">
+                <Button Content="🔐 Cybersecurity" Style="{StaticResource CyberButton}" Margin="4"
                         Click="QuickTopic_Click" Tag="cybersecurity" IsEnabled="False" x:Name="BtnCyber"/>
-                    <Button Content="🎣 Phishing"      Style="{StaticResource CyberButton}" Margin="4"
+                <Button Content="🎣 Phishing"      Style="{StaticResource CyberButton}" Margin="4"
                         Click="QuickTopic_Click" Tag="phishing"      IsEnabled="False" x:Name="BtnPhishing"/>
-                    <Button Content="🔑 Password"      Style="{StaticResource CyberButton}" Margin="4"
+                <Button Content="🔑 Password"      Style="{StaticResource CyberButton}" Margin="4"
                         Click="QuickTopic_Click" Tag="password"      IsEnabled="False" x:Name="BtnPassword"/>
-                    <Button Content="💀 Scam"          Style="{StaticResource CyberButton}" Margin="4"
+                <Button Content="💀 Scam"          Style="{StaticResource CyberButton}" Margin="4"
                         Click="QuickTopic_Click" Tag="scam"          IsEnabled="False" x:Name="BtnScam"/>
-                    <Button Content="🕵 Privacy"       Style="{StaticResource CyberButton}" Margin="4"
+                <Button Content="🕵 Privacy"       Style="{StaticResource CyberButton}" Margin="4"
                         Click="QuickTopic_Click" Tag="privacy"       IsEnabled="False" x:Name="BtnPrivacy"/>
-                    <Button Content="💡 Safety Tip"    Style="{StaticResource CyberButton}" Margin="4"
+                <Button Content="💡 Safety Tip"    Style="{StaticResource CyberButton}" Margin="4"
                         Click="QuickTopic_Click" Tag="give me a tip" IsEnabled="False" x:Name="BtnTip"/>
-                </WrapPanel>
-            </Border>
-        </Grid>
-    </Window>
+            </WrapPanel>
+        </Border>
+    </Grid>
+</Window>
