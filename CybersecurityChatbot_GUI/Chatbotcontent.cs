@@ -129,41 +129,41 @@ namespace CybersecurityChatbot_GUI
         public static readonly Dictionary<string, string[]> RandomResponses = new Dictionary<string, string[]>
         {
             { "phishing tip", new[]{
-                "🎣 Be wary of urgency — 'Your account will be suspended!' is designed to make you act before thinking.",
-                "🎣 Check the sender's email character by character — 'paypa1.com' (with a '1') is a classic fake.",
-                "🎣 Legit companies never ask for your password, OTP, or full card number by email or SMS.",
-                "🎣 Type the official website yourself rather than clicking a link in an unexpected email.",
-                "🎣 Hover over links before clicking — the real URL shows in the bottom status bar.",
-                "🎣 'Dear Customer' instead of your name is a red flag — your real bank knows who you are.",
-                "🎣 Spear phishing uses info from your social media to craft a personalised fake email.",
-                "🎣 Vishing (phone scams) is rising in SA — always call back on the official number, not the one given to you." } },
+                " Be wary of urgency — 'Your account will be suspended!' is designed to make you act before thinking.",
+                " Check the sender's email character by character — 'paypa1.com' (with a '1') is a classic fake.",
+                " Legit companies never ask for your password, OTP, or full card number by email or SMS.",
+                " Type the official website yourself rather than clicking a link in an unexpected email.",
+                " Hover over links before clicking — the real URL shows in the bottom status bar.",
+                " 'Dear Customer' instead of your name is a red flag — your real bank knows who you are.",
+                " Spear phishing uses info from your social media to craft a personalised fake email.",
+                " Vishing (phone scams) is rising in SA — always call back on the official number, not the one given to you." } },
 
             { "password tip", new[]{
-                "🔑 Use Bitwarden — free, generates unique passwords, you only remember one master password.",
-                "🔑 Enable 2FA on every account that offers it, especially email and banking.",
-                "🔑 Build passphrases like 'Coffee!Rain42Desk' — stronger and easier to remember than 'P@ssw0rd'.",
-                "🔑 Check HaveIBeenPwned.com — if your email's been breached, change that password everywhere.",
-                "🔑 Never store passwords in plain text — use an encrypted password manager.",
-                "🔑 Your email password is the master key to everything — make it long, unique, and 2FA-protected.",
-                "🔑 Change passwords immediately when you hear of a breach, even before you're notified.",
-                "🔑 Hardware keys (YubiKey) can't be phished remotely like SMS codes can." } },
+                " Use Bitwarden — free, generates unique passwords, you only remember one master password.",
+                " Enable 2FA on every account that offers it, especially email and banking.",
+                " Build passphrases like 'Coffee!Rain42Desk' — stronger and easier to remember than 'P@ssw0rd'.",
+                " Check HaveIBeenPwned.com — if your email's been breached, change that password everywhere.",
+                " Never store passwords in plain text — use an encrypted password manager.",
+                " Your email password is the master key to everything — make it long, unique, and 2FA-protected.",
+                " Change passwords immediately when you hear of a breach, even before you're notified.",
+                " Hardware keys (YubiKey) can't be phished remotely like SMS codes can." } },
 
             { "general safety tip", new[]{
-                "🛡 Keep all software updated — most attacks exploit flaws that updates already fixed.",
-                "🛡 Never bank or shop on public Wi-Fi without a VPN.",
-                "🛡 Follow the 3-2-1 backup rule: 3 copies, 2 storage types, 1 offsite.",
-                "🛡 Lock your screen every time you step away, even for a minute.",
-                "🛡 Review app permissions monthly — revoke camera/mic/location access you don't need.",
-                "🛡 Never plug in unknown USB drives — a classic malware delivery method.",
-                "🛡 Enable 'Find My Device' so you can lock or wipe a lost device remotely.",
-                "🛡 Use a credit card over debit for online shopping — better fraud protection." } },
+                " Keep all software updated — most attacks exploit flaws that updates already fixed.",
+                " Never bank or shop on public Wi-Fi without a VPN.",
+                " Follow the 3-2-1 backup rule: 3 copies, 2 storage types, 1 offsite.",
+                " Lock your screen every time you step away, even for a minute.",
+                " Review app permissions monthly — revoke camera/mic/location access you don't need.",
+                " Never plug in unknown USB drives — a classic malware delivery method.",
+                " Enable 'Find My Device' so you can lock or wipe a lost device remotely.",
+                " Use a credit card over debit for online shopping — better fraud protection." } },
 
             { "scam tip", new[]{
-                "💀 Never share your OTP — your bank will NEVER ask for it over the phone.",
-                "💀 Check unfamiliar shops on the CIPC register (cipc.co.za) before buying.",
-                "💀 Pig butchering scams build fake trust over weeks before pushing a crypto 'investment'.",
-                "💀 Any prize that requires a fee to claim is always a scam.",
-                "💀 Legit employers never ask you to pay for training materials upfront." } }
+                " Never share your OTP — your bank will NEVER ask for it over the phone.",
+                " Check unfamiliar shops on the CIPC register (cipc.co.za) before buying.",
+                " Pig butchering scams build fake trust over weeks before pushing a crypto 'investment'.",
+                " Any prize that requires a fee to claim is always a scam.",
+                " Legit employers never ask you to pay for training materials upfront." } }
         };
 
         // ============================================================
