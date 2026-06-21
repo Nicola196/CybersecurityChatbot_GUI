@@ -62,7 +62,7 @@ namespace CybersecurityChatbot_GUI
                 .ToList();
 
             var sb = new StringBuilder();
-            sb.AppendLine("📋 Here's a summary of recent actions:\n");
+            sb.AppendLine(" Here's a summary of recent actions:\n");
 
             int number = 1;
             foreach (var entry in recent)
@@ -86,7 +86,7 @@ namespace CybersecurityChatbot_GUI
                 return "No actions have been logged yet this session.";
 
             var sb = new StringBuilder();
-            sb.AppendLine($"📋 Full activity log ({_entries.Count} action(s) total):\n");
+            sb.AppendLine($" Full activity log ({_entries.Count} action(s) total):\n");
 
             int number = 1;
             foreach (var entry in _entries)
