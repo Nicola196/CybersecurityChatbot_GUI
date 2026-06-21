@@ -117,7 +117,7 @@ namespace CybersecurityChatbot_GUI
                 case Intent.StartQuiz:
                     var first = _quiz.StartQuiz();
                     _log.AddEntry("Quiz started");
-                    return $"🎮 {_quiz.TotalQuestions} questions, mixed multiple-choice/true-false, {user.Name}!\n\n" +
+                    return $" {_quiz.TotalQuestions} questions, mixed multiple-choice/true-false, {user.Name}!\n\n" +
                            _quiz.FormatQuestion(first, 1);
 
                 case Intent.ShowLog:
@@ -140,7 +140,7 @@ namespace CybersecurityChatbot_GUI
                     if (_db.MarkTaskCompletedByTitle(completeTitle))
                     {
                         _log.AddEntry($"Task completed: '{completeTitle}'");
-                        return $"Nicely done, {user.Name}! Marked as completed. 🎉";
+                        return $"Nicely done, {user.Name}! Marked as completed. ";
                     }
                     return "Couldn't find a matching task. Type 'show tasks' to see your list.";
 
@@ -170,10 +170,10 @@ namespace CybersecurityChatbot_GUI
                     var tasks = _db.GetAllTasks();
                     if (tasks.Count == 0)
                         return $"No tasks yet, {user.Name}. Try 'Add task - Enable two-factor authentication'!";
-                    string list = $"📋 Your cybersecurity tasks, {user.Name}:\n\n";
+                    string list = $" Your cybersecurity tasks, {user.Name}:\n\n";
                     foreach (var t in tasks)
                     {
-                        string status = t.IsCompleted ? "✅ Completed" : "🔲 Pending";
+                        string status = t.IsCompleted ? " Completed" : " Pending";
                         string rem = t.ReminderDate.HasValue ? $" | Reminder: {t.ReminderDate:dd MMM yyyy}" : "";
                         list += $"• {t.Title} — {status}{rem}\n";
                     }
@@ -229,20 +229,20 @@ namespace CybersecurityChatbot_GUI
         {
             if (lower == "help" || lower.Contains("what can you do") || lower.Contains("topics") || lower.Contains("menu"))
                 return "Here's everything I can help with, " + user.Name + ":\n\n" +
-                       "🔐 CYBERSECURITY | 🎣 PHISHING | 🔑 PASSWORD | 💀 SCAM | 🕵 PRIVACY | 🌐 BROWSING | 🔗 SUSPICIOUS | 📋 REPORT\n\n" +
-                       "💡 TIPS: 'phishing tip' | 'password tip' | 'scam tip' | 'safety tip'\n" +
-                       "🔄 FOLLOW-UP: 'tell me more'\n" +
-                       "✅ TASKS: 'add task - [desc]' | 'show tasks' | 'mark [task] complete' | 'delete task [name]'\n" +
-                       "⏰ REMINDERS: 'remind me in 3 days'\n" +
-                       "🎮 QUIZ: 'start quiz'\n" +
-                       "📜 LOG: 'show activity log'\n\nType 'exit' to quit.";
+                       " CYBERSECURITY |  PHISHING |  PASSWORD |  SCAM |  PRIVACY |  BROWSING |  SUSPICIOUS |  REPORT\n\n" +
+                       " TIPS: 'phishing tip' | 'password tip' | 'scam tip' | 'safety tip'\n" +
+                       " FOLLOW-UP: 'tell me more'\n" +
+                       " TASKS: 'add task - [desc]' | 'show tasks' | 'mark [task] complete' | 'delete task [name]'\n" +
+                       " REMINDERS: 'remind me in 3 days'\n" +
+                       " QUIZ: 'start quiz'\n" +
+                       " LOG: 'show activity log'\n\nType 'exit' to quit.";
 
             if (lower.Contains("hello") || lower.Contains("hi") || lower.Contains("hey") || lower == "sup")
-                return $"Hello again, {user.Name}! 👋 Type 'help' to see all topics.";
+                return $"Hello again, {user.Name}!  Type 'help' to see all topics.";
             if (lower.Contains("how are you"))
                 return $"Running at full security capacity, {user.Name}! How can I help?";
             if (lower.Contains("thank"))
-                return $"You're very welcome, {user.Name}! Stay safe out there. 🛡";
+                return $"You're very welcome, {user.Name}! Stay safe out there. ";
             if (lower.Contains("who are you") || lower.Contains("what are you"))
                 return $"I'm your Cybersecurity Awareness Chatbot, {user.Name}! Type 'help' to see what I can do.";
             return null;
