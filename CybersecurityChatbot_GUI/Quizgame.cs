@@ -182,7 +182,7 @@ namespace CybersecurityChatbot_GUI
 
             CurrentIndex++;
 
-            string feedback = (isCorrect ? "✅ Correct! " : "❌ Incorrect. ") + question.Explanation;
+            string feedback = (isCorrect ? " Correct! " : " Incorrect. ") + question.Explanation;
             return (isCorrect, feedback);
         }
 
@@ -216,11 +216,11 @@ namespace CybersecurityChatbot_GUI
 
             string encouragement;
             if (percentage >= 80)
-                encouragement = $"🏆 Great job! You're a cybersecurity pro, {userName}!";
+                encouragement = $" Great job! You're a cybersecurity pro, {userName}!";
             else if (percentage >= 50)
-                encouragement = $"👍 Good effort, {userName}! Keep learning to stay even safer online.";
+                encouragement = $" Good effort, {userName}! Keep learning to stay even safer online.";
             else
-                encouragement = $"📚 Keep learning to stay safe online, {userName}!";
+                encouragement = $" Keep learning to stay safe online, {userName}!";
 
             return $"Quiz complete! You scored {Score} out of {TotalQuestions} ({percentage:F0}%).\n\n{encouragement}\n\n" +
                    "Type 'start quiz' to try again, or 'help' to see other topics.";
@@ -232,7 +232,7 @@ namespace CybersecurityChatbot_GUI
         // --------------------------------------------------------
         public string FormatQuestion(QuizQuestion q, int questionNumber)
         {
-            string text = $"📝 Question {questionNumber} of {TotalQuestions}:\n{q.QuestionText}\n\n";
+            string text = $" Question {questionNumber} of {TotalQuestions}:\n{q.QuestionText}\n\n";
             foreach (string opt in q.Options)
                 text += opt + "\n";
 
