@@ -16,7 +16,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./CybersecurityChatbot_GUI # ✅ correct folder
+        working-directory: ./CybersecurityChatbot_GUI
 
     steps:
     - uses: actions/checkout@v4
@@ -24,8 +24,9 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
-     # ❌ REMOVED nuget restore (causes your error)
-     
+    - name: Restore NuGet packages
+      run: nuget restore CybersecurityChatbot_GUI.csproj
+      
     - name: Build
       run: msbuild CybersecurityChatbot_GUI.csproj /p:Configuration=Release
    
