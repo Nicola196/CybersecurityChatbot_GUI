@@ -1,4 +1,7 @@
-name: .NET Core Desktop
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
 
 on:
   push:
@@ -6,40 +9,25 @@ on:
   pull_request:
     branches: [ "master" ]
 
-env:
-  Solution_Name: CybersecurityChatbot_GUI.slnx
-
 jobs:
   build:
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
     runs-on: windows-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+    - uses: actions/checkout@v4
 
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+    # 1. Setup MSBuild (Essential for legacy .NET Framework 4.7.2)
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
 
-    - name: Restore the application
-      run: dotnet restore "${{ env.Solution_Name }}"
+    # 2. Setup NuGet CLI
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
 
+    # 3. Restore dependencies using wildcards to find the project wherever it is nested
+    - name: Restore dependencies
+      run: nuget restore **/*.csproj
+
+    # 4. Build the application using MSBuild (Not dotnet build)
     - name: Build the application
-      run: dotnet build "${{ env.Solution_Name }}" --configuration ${{ matrix.configuration }} --no-restore
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: Build Output - ${{ matrix.configuration }}
-        path: |
-          **/bin/${{ matrix.configuration }}/**/*.exe
-          **/bin/${{ matrix.configuration }}/**/*.dll
-        retention-days: 5
-      continue-on-error: true
+      run: msbuild **/*.csproj /p:Configuration=Release
