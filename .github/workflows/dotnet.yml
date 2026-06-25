@@ -16,13 +16,20 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    # Setup modern .NET SDK just in case
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
 
-    - name: Restore dependencies
-      run: dotnet restore CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj
+    # Installs the dedicated NuGet CLI tool needed for legacy package structures
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
 
+    # Restores packages using the NuGet CLI directly on the project folder
+    - name: Restore dependencies
+      run: nuget restore CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj
+
+    # Builds the project using the dotnet tool
     - name: Build
       run: dotnet build CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj --no-restore --configuration Release
