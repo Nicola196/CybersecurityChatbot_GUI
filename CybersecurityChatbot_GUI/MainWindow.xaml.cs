@@ -207,7 +207,7 @@ namespace CybersecurityChatbot_GUI
             Color col = (Color)ColorConverter.ConvertFromString(hexColour);
             TextBlock tb = new TextBlock
             {
-                Text = "🤖 Bot: ",
+                Text = " Bot: ",
                 Foreground = new SolidColorBrush(col),
                 FontFamily = new FontFamily("Courier New"),
                 FontSize = 13,
