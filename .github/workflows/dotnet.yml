@@ -11,25 +11,18 @@ on:
 
 jobs:
   build:
-    # Changed from ubuntu-latest to windows-latest to support .NET Framework 4.7.2
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
 
-    # Setup MSBuild, which is required for legacy .NET Framework projects
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
-
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: nuget restore CybersecurityChatbot_GUI.sln
+      run: dotnet restore CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj
 
     - name: Build
-      run: msbuild CybersecurityChatbot_GUI.sln /p:Configuration=Release
-
-    # Optional: Uncomment if you actually have automated tests in your solution
-    # - name: Test
-    #   run: vstest.console.exe .\**\bin\Release\*test*.dll
+      run: dotnet build CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj --no-restore --configuration Release
