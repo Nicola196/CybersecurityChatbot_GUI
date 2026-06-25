@@ -24,10 +24,10 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v2
 
-    # 3. Restore dependencies using wildcards to find the project wherever it is nested
+    # 3. Restore dependencies using the exact folder path
     - name: Restore dependencies
-      run: nuget restore **/*.csproj
+      run: nuget restore CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj
 
-    # 4. Build the application using MSBuild (Not dotnet build)
+    # 4. Build the application using MSBuild targeting the exact project file
     - name: Build the application
-      run: msbuild **/*.csproj /p:Configuration=Release
+      run: msbuild CybersecurityChatbot_GUI/CybersecurityChatbot_GUI.csproj /p:Configuration=Release
