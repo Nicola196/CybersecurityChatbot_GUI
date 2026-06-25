@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // FILE: DatabaseHelper.cs
 // PURPOSE: All MySQL database logic for the Task Assistant
 //          (Part 3, Task 1 — Database Integration / Task Storage).
@@ -19,7 +19,6 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace CybersecurityChatbot_GUI
 {

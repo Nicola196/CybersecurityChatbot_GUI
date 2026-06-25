@@ -1,0 +1,45 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  Solution_Name: CybersecurityChatbot_GUI.slnx
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore the application
+      run: dotnet restore "${{ env.Solution_Name }}"
+
+    - name: Build the application
+      run: dotnet build "${{ env.Solution_Name }}" --configuration ${{ matrix.configuration }} --no-restore
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: Build Output - ${{ matrix.configuration }}
+        path: |
+          **/bin/${{ matrix.configuration }}/**/*.exe
+          **/bin/${{ matrix.configuration }}/**/*.dll
+        retention-days: 5
+      continue-on-error: true
